@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript" src="ajax.js" ></script>
+<script>
+	var obj={
+		method:"GET",
+		json:{},
+		url:"http://csit.top/api_cat.php",
+		callback:function(json){
+			var arr=json.data;
+			for (var i = 0; i < arr.length; i++) {
+				console.log(arr[i].cat_name);
+			}
+		}
+    }
+	ajax(obj);
+</script>

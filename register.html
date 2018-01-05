@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>用户注册-良仓.生活美学平台</title>
+	</head>
+	<link rel="shortcut icon" href="http://7q5ckq.com1.z0.glb.clouddn.com/static/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/register.css"/>
+	<script type="text/javascript" src="js/ajax.js" ></script>
+	<script type="text/javascript" src="js/register.js" ></script>
+	<body>
+			<div id="logo">
+				<img src="img/logo_icon.png"/>		
+			</div>
+			
+			<div class="row">
+				<span class="text">
+					账号&nbsp;
+				</span>
+			 	<input id="username" type="text" value="请输入账号"  onfocus="if 
+       			 (value =='请输入账号'){value =''}" onblur="if 				(value =='')
+       		 	{value='请输入账号'}" />
+       		</div>
+       		
+			<div class="row">
+				<span class="text">
+					验证码
+				</span>
+			
+			 	<input id="VC" type="text" value="请输入验证码" 
+        		onfocus="if 	
+        		(value =='请输入验证码'){value =''}" onblur="if 			(value =='')
+        		{value='请输入验证码'}" />
+        		<div class="row_4">
+       			 <input type="button" id="code" />
+    			 <a href="javascript:;" onclick="getVerificationCode()" id="aj">看不清换一张 </a>
+       		    </div>
+       		</div>
+       		
+       		<div class="row">
+				<span class="text">
+					创建密码
+				</span>
+			
+			 	<input id="password" type="password" placeholder="6-20位字符组成,区分大小写" 
+      		  	onfocus="if 
+        		(placeholder =='6-20位字符组成,区分大小写'){placeholder =''}" onblur="if 				(placeholder =='')
+       			 {placeholder='6-20位字符组成,区分大小写'}" />
+       		</div>
+       			
+       		<div class="row">
+				<span class="text">
+					确认密码
+				</span>
+			
+			 	<input id="confirmPassword" type="password" placeholder="确认密码" 
+        		onfocus="if 
+        		(placeholder =='确认密码'){placeholder =''}" onblur="if 				(placeholder =='')
+       			 {placeholder='确认密码'}" />
+       		</div>
+       			
+       		<div class="row">
+       			<span class="text">
+					&nbsp&nbsp
+				</span>
+				<input id="agreeButton" type="checkbox" />&nbsp;
+					<span class="agree">
+						同意
+					</span>
+       			 <a id="clause" href=""> 良仓注册条款</a>	
+       		</div>
+       			
+       			
+       		<div class="row_2">
+       		   <input id="register" type="button" value="立即注册" />
+       		</div>
+       		
+       		<div class="row_3">
+       			
+       		  <a id="AA" href="#">
+            	<img src="img/qqnormal.png">
+        	  </a>
+        	  <a id="AA" href="#">
+           		 <img src="img/xinlangnormal.png">
+              </a>
+              <a id="AA" href="#">
+            	 <img src="img/doubannormal.png">
+              </a>
+  
+       		  <a id="AA" href="#">
+                 <img src="img/tengxunmouse.png">
+              </a>
+              <a href="login.html" class="login">登陆良仓</a>
+       		</div>
+					<br/>
+					<br/>
+       		 <div id="guding">
+       		 	<a href="#" id="A1"> ferm LIVING.</a>
+    			<a href="#"><img id="imgA" src="img/60.jpg"></a>
+			 </div>
+       				 
+               		
+	</body>
+</html>

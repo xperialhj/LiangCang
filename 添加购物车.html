@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+	</head>
+	<body>
+		<div id="classify"></div>
+		<div id="goods"></div>
+	</body>
+</html>
+<script src="js/ajax.js"></script>
+<script>
+var oCla=document.getElementById("classify");
+var oGoods=document.getElementById("goods");
+var obj={
+	method:"GET",
+	url:"http://csit.top/api_cat.php",
+	json:{},
+	callback:function(json){
+		var arr=json.data;
+		var oUl=document.createElement("ul");
+		oCla.appendChild(oUl);
+		for (var i = 0; i < arr.length; i++) {
+			 var oLi=document.createElement("li");
+			 oLi.innerHTML='<a onclick="getGoods('+arr[i].cat_id+')">'+arr[i].cat_name+'</a>';
+			 oUl.appendChild(oLi);
+		}
+		getGoods(arr[0].cat_id);
+	}
+}
+ajax(obj);
+
+function addcart(id){
+	var obj={
+		method:"POST",
+		url:"http://csit.top/api_cart.php",
+		json:{
+			goods_id:id,
+		    number:"1"
+		},
+		head:"token",
+		headValue:"7fc1a3db5454b7b4dd41998a577a2264",
+		callback:function(){}
+	}
+	ajax(obj);
+}
+
+
+function getGoods(id){
+	var obj={
+		method:"GET",
+		url:"http://csit.top/api_goods.php",
+		json:{
+			cat_id:id,
+			page:1,
+			pagesize:1000
+		},
+		callback:function(json){
+			var arr=json.data;
+			var oUl=document.createElement("ul");
+			oGoods.innerHTML="";
+			oGoods.appendChild(oUl);
+				for (var i = 0; i < arr.length; i++) {
+				 var oLi=document.createElement("li");
+				 oLi.innerHTML='<img src="'+ arr[i].goods_thumb +'"/>'+
+				 '<p>'+ arr[i].goods_name +'</p>'+
+				 '<div class="desc"><h2>￥' +arr[i].price +'</h2><h3>' +arr[i].goods_name +'</h3><p>'+ arr[i].goods_desc +'</p><input type="button" value="添加购物车 " onclick="addcart('+arr[i].goods_id+')"/></div>';
+				 
+				 
+				 oUl.appendChild(oLi);
+				}
+		}
+    }
+	ajax(obj);
+}
+
+</script>

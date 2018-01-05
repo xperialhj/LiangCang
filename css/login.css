@@ -1,0 +1,103 @@
+*{margin: 0px;padding: 0px;}
+li{list-style: none;}
+img{border: none;}
+a{text-decoration: none;}
+body{
+	background:#fff;
+/*	position: absolute;*/
+}
+#box{width: 500px;
+	height: 319px;
+	background:#fff;
+	margin: 0px auto;
+	margin-top:8px;
+	text-align: center;
+}
+#box img{
+	margin-top:60px;
+	
+}
+.Username{
+	width: 400px;
+	height: 58px;
+	margin:0 auto;
+	text-align: center;
+}
+.Password{
+	width: 400px;
+	height: 58px;
+	margin:0 auto;
+	text-align: center;
+	position: relative;
+}
+.auto{
+	width: 320px;
+	height: 28px;
+	margin:0 auto;
+	padding-left:18px;
+}
+#username{
+	/*margin: 0px 600px;*/
+	border:none;
+	border-bottom: 1px solid #000;
+	height: 35px;
+	width: 270px;
+	background:url(../img/nlphone.png)no-repeat 0px 6px;
+	outline:none;
+	/*position: absolute; left:50%;margin-left:-168px;top:auto;*/
+	font-size: 18px;
+	padding-left: 30px;
+}
+#password{
+	border:none;
+	border-bottom: 1px solid #000;
+	height: 35px;
+	width: 270px;
+	background:url(../img/nlcode.png)no-repeat 0px 6px;
+	outline:none;
+	position: absolute; left:50%;margin-left:-150px;top:auto;
+	font-size: 18px;
+	padding-left: 30px;
+}
+/*#btn{
+	width:112px;height:38px;
+	border: 1px solid #000;
+	border-radius:5px;
+	position: absolute; left:50%;margin-left:36px;top:-4px;
+}*/
+#span1{
+	display:block;width:112px;height:38px;
+	font: 16px/46px "微软雅黑";text-align: center; 
+	font-weight: 100;line-height:38px;
+}
+
+#autoLogin-t{
+	font-size: 13px;
+	position: absolute;left:0px top:auto;
+}
+#Login{
+	width: 300px;
+	height: 50px;
+	margin:20px auto ;
+	
+}
+#login{
+	text-align: center;
+	background: #25292e;
+	width:300px;
+	height:50px;
+	font: 18px/50px "微软雅黑";
+	color:#fff;
+	border-radius:5px;
+	outline: none;
+	cursor: pointer;
+	border:none;
+}
+.more{
+	width:200px;
+	margin:0 auto;
+	text-align: center;
+}
+.more a{
+	font-size:15px; color:#000;
+}

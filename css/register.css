@@ -1,0 +1,167 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	border: none;
+}
+
+body {
+	background: #989898;
+}
+#logo{
+	
+	width:545px;height:300px;/*border:1px solid red;*/margin:0 auto;
+	text-align: center;
+}
+
+#logo img{
+	margin-top: 160px;
+}
+
+.text{
+	font-size: 14px;
+	color: #FCFCFC;
+	display: block;
+	width:70px;height:50px;
+	float:left;
+	line-height: 50px;
+}
+
+.agree{
+	font-size: 12px;
+	color: #FCFCFC;
+	line-height: 56px;
+}
+#clause{
+font-size: 12px;
+color: #oc79cc;	
+}
+ #agreeButton{
+	float:left;margin-top:20px;
+	width:20px;height:20px;
+}
+.row{
+	width:416px;height: 50px;
+	/*border:1px solid red;*/
+	margin:0 auto;
+	padding:10px 0px;
+	position: relative;
+}
+.row_3{
+	width:346px;height: 50px;
+	/*border:1px solid red;*/
+	margin:0 auto;
+	padding-left:70px;
+	line-height:60px;
+	
+	
+}
+.row_3 img{
+	margin:0 10px;
+}
+.row_3 #AA:hover img{
+	
+	opacity: 0.5;
+}
+#AA{
+	float:left;
+	
+}
+.row_2{
+	width:346px;height: 50px;
+	/*border:1px solid red;*/
+	margin:0 auto;
+	
+	padding-left: 70px;
+}
+ #username,#password,#confirmPassword{
+	width: 320px;height: 50px;
+	font-size: 14px;
+	color: #fcfcfc;
+	background: #cbcbcb;
+	outline: none;
+	border:none;
+	float:right;
+	padding-left:25px;
+}
+#register{
+	width: 320px;height: 50px;
+	background: #25292e;
+	outline: none;
+	border:none;
+	color: #fcfcfc;
+	font-size: 18px;
+	font-weight: bold;
+}
+ #VC{
+	width: 245px;
+	height: 50px;
+	font-size: 14px;
+	color: #fcfcfc;
+	background: #cbcbcb;
+	outline: none;
+	border:none;
+	padding-left:25px;
+	float:left;
+}
+input::-webkit-input-placeholder {
+	color: #FCFCFC;
+}
+
+input::-ms-input-placeholder {
+	color: #FCFCFC;
+}
+
+.row_4{
+	width:200px;height: 50px;
+	/*border:1px solid red;*/
+	position: absolute;
+	top:20px;left:360px;
+}
+#code {
+	font-family: Arial;
+	font-style: italic;
+	font-weight: bold;
+	border: 0;
+	letter-spacing: 2px;
+	color: blue;
+	width: 100px;
+	height: 30px;
+	background: #FCFCFC;
+
+}
+#aj{
+	color:#FCFCFC;font-size:12px;
+}
+#guding{
+	/*border:1px solid red;*/
+	width:190px;height:50px;
+	position:fixed;
+	left:85%;top:88%;
+	z-index: 200;
+}
+#guding #imgA{
+	width:48px;height:48px;
+	float:right;
+}
+#A1{
+	color:#FCFCFC;font-size:12px;line-height: 48px;padding-left: 30px;
+}
+.login{
+	font:14px/30px bold;
+	color:#ffffff;
+	border-bottom:1px solid #ffffff;
+	margin-right:20px;
+	margin-top:10px;
+	float:right;
+}

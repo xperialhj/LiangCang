@@ -17,7 +17,9 @@ oLogin.onclick=function(){
 						localStorage.setItem("username",strUsername);
 						localStorage.setItem("password",strPassword);
 					}
-					location.href="../index.html";
+					console.log(obj)
+					localStorage.setItem("token",obj.data.token);
+					//location.href="index.html";
 				}else {
 					alert(obj.message);
 				}
@@ -35,7 +37,7 @@ window.onload=function(){
 		loginOrRegister(json,function(obj){
 			if (obj.code == 0) {
 						alert("登陆成功");
-						location.href="../index.html";
+						location.href="index.html";
 					}else {
 						alert(obj.message);
 					}

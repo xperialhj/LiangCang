@@ -1,0 +1,335 @@
+*{
+	margin: 0px; padding: 0px;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style:none;
+}
+.header-bg{
+	width: 100%;height:56px;background:#25292e;
+}
+.header{
+	width:1000px;height:56px; margin:0 auto; background:#25292e;
+}
+.header-logo{
+	width:95px;height:38px;margin: 9px 0;background:#25292e;float:left;opacity:1;
+}
+.header-logo a{
+	display:block;width:95px;height:38px;background:url(../icon.png)no-repeat;
+}
+.header-logo:hover{
+	opacity:0.8;
+}
+.header>ul{
+	/*width: 272px;*/ height: 56px;float:right;/*background:red;*/
+}
+.header>ul>li{
+	float:left; font-size:12px;height: 56px;line-height:56px;/*letter-spacing:1px;*/
+	color:#666;
+}
+.header>ul>li>a{
+	color:#666666;padding:0 16px; height:56px;display:block;
+}
+.header>ul>li:hover>a{
+	color:#ccc;
+}
+.header>ul>li.oneli>a{
+	color:#ccc;float:left;
+}
+.header>ul>li.oneli>a{
+	margin-right:12px; padding:0px;
+}
+.header>ul>li.forli>a{
+	padding:0 0 0 15px;
+}
+.header>ul>li.thrli:hover,li.twoli:hover{
+	background:#292f34;
+}
+.header>ul>li.twoli{
+	position:relative;
+}
+.header>ul>li.twoli:hover .twolist{
+	display:block;
+}
+.header>ul>li.twoli>.twolist{
+	width:320px;height:120px;position:absolute;left:-123px;top:56px;
+	display:none;
+}
+.header>ul>li.twoli>.twolist>.twolisttop{
+	width:280px;height:70px;line-height:70px;padding:0 20px; font-size:14px;
+	text-align: center;background:#292f34;
+}
+.header>ul>li.twoli>.twolist>.twolisttop>a{
+	color:#ccc;
+}
+.header>ul>li.twoli>.twolist>.twolistbot{
+	width:280px;height:50px;line-height:50px;padding:0 20px; font-size:14px;
+	text-align: center;background:#7dbfde;cursor: pointer;
+}
+.header>ul>li.twoli>.twolist>.twolistbot>a{
+	color:#fff;
+}
+.header>ul>li.twoli>.twolist>.twolistbot:hover{
+	background:#96c8e0;
+}
+.header>ul>li.thrli{
+	position: relative;
+}
+.header>ul>li.thrli:hover .thrlist{
+	display: block;
+}
+.header>ul>li.thrli>.thrlist{
+	width:190px;height:264px;position:absolute;left:-64px;top:56px;background:#292f34;
+	display:none;cursor: pointer;
+}
+.header>ul>li.thrli>.thrlist>div{
+	width:160px;height:44px; padding:0 15px;
+}
+.header>ul>li.thrli>.thrlist>div:hover{
+	background:#2e353d;
+}
+.header>ul>li.thrli>.thrlist>div>a{
+	display:block; width: 160px;height: 44px;border-bottom:1px solid #3f4449;
+	line-height:44px;font-size:12px; letter-spacing:1.5px;color:#ccc;
+}
+.header>ul>li.thrli>.thrlist>div.linenone>a{
+	border:none;
+}
+.header>ul>li.thrli>.thrlist>div>a>span{
+	float:right;
+}
+.nav{
+	width:1000px;height:45px;margin:0 auto;border-bottom:4px solid #ededed;
+}
+.nav>ul{
+	height:49px; float:left;
+}
+.nav>ul>li{
+	float:left;width:121px; height:45px; line-height: 45px;border-bottom:4px solid #ededed;
+	text-align: center;cursor: pointer;
+}
+.nav>ul>li>a{
+	color: #333;
+    font-size: 15px;
+}
+.nav>ul>li:hover{
+	border-color:#25292e;
+}
+.nav>ul>li.big{
+	margin-right:43px;
+}
+.nav>.search{
+	width:260px; height:40px; float:right; padding-top:9px;
+}
+.nav>.search>.searchicon{
+	float:right; width:33px; height:36px; background: url(../icon.png)no-repeat;padding-top:4px;
+	background-position: -167px -149px;
+}
+.car{
+	width:1000px;margin:0 auto;padding: 50px 0px 10px 0px;
+    height:32px;text-align:center;font-size: 14px;
+}
+.car a{
+	display:block; color: #333;
+}
+.car a span{
+	padding:0 54px; 
+}
+.car a span:hover{
+	color: #6393b4;
+}
+.anyway{
+	width:1000px;height:52px;margin:0 auto;margin-top: 20px;
+	border-bottom: 2px solid #ccc;
+}
+.anyway ul li{
+	height:52px; line-height:52px;float:left; font-size:15px;
+	width:138px;text-align:center;
+}
+.anyway ul li.two{
+	width:310px;
+}
+.anyway ul li a{
+	color:#666;
+}
+.mach-bg{
+	width:1000px; height:102px; margin:0 auto; padding:20px 0px 108px;
+	
+}
+.mach{
+	width:1000px; height:102px;text-align:center;
+}
+.mach .money{
+	width: 100%;height:33px;line-height:30px;text-align:center;font-size:14px;
+}
+.mach .money span{
+	color: #197bc9;font-size: 20px;margin-left: 10px; 
+}
+.mach .mai{
+	width: 100%;height:35px;line-height:30px;text-align:center;
+}
+.mach .mai input{
+    text-align: center;  background: #7fa6c5;margin-top: 5px;border: none; color: #fff;
+    height: 30px; width: 168px; vertical-align: middle; line-height: 30px;margin-bottom: 15px;
+    display: inline-block;
+}
+.mach .next{
+	border-bottom: 1px solid #ccc;display: inline-block; margin-top: 20px;
+    font-size: 14px;color: #404040;width: 60px; padding: 0 54px;position: relative;
+}
+.mach .next span{
+	position:absolute;left:60px;top:-10px;background:#fff;
+}
+.our-bg{
+	width:100%;height:120px;border-top:1px solid #ededed;background:#fbfdfe;
+	padding: 51px 0 78px;
+}
+.titleour{
+	position:relative;margin: 0 auto;padding-left: 45px;width: 177px;
+    height: 16px; background:url(../icon.png);background-position: 45px -417px;
+}
+.titleour p{
+    height: 15px;width: 27px;position: absolute;left: 0; top: 1px;
+    background:url(../icon.png);background-position: -173px -356px;
+}
+.ourmany{
+	width:1000px; height:60px;padding-top:42px; margin:0 auto;background:#fbfdfe;
+}
+.ourmany ul li{
+	width:250px; height:60px; float:left;
+}
+.ourmany ul li .ourlogo{
+	background:url(../icon.png)no-repeat left;margin-right:16px;
+}
+.ourmany ul li.ourone .ourlogo{
+	float:left; width:56px; height:60px; background-position: 0 -355px;
+}
+.ourmany ul li.ourtwo .ourlogo{
+	float:left; width:45px; height:60px; background-position: -153px -217px;
+}
+.ourmany ul li.ourthr .ourlogo{
+	float:left; width:55px; height:60px;background-position: -57px -353px;
+}
+.ourmany ul li.ourfor .ourlogo{
+	float:left; width:57px; height:60px;background-position: -114px -353px;
+}
+.ourmany ul li .chinesetop{
+	height: 24px;line-height:24px;overflow: hidden;font-size: 14px;color: #737373;
+    text-align: left; margin-top:7px;
+}
+.ourmany ul li .english{
+	  font-size:13px;line-height: 22px; color: #ccc;
+}
+.footer-bg{
+	width:100%;height:223px;background:#25292e;border-top: #25292e 1px solid;
+}
+.footer{
+	width:1000px;height:222px;margin:0 auto;background:#25292e;
+}
+.footleft{
+	width:800px;padding-top:40px;height:182px;float:left;
+}
+.footleft>h1{
+	width:196px;height:44px;
+}
+.footleft>h1>div{
+	position:relative;padding-left:60px;font-size: 14px; font-weight:normal;
+   	width: 136px; height: 44px; color: #5c5c5c; letter-spacing: 2px;
+   	cursor: pointer;background:url(../icon.png)no-repeat;letter-spacing: 2px;
+ 	background-position: -175px 0;
+}
+.footleft>h1>div:hover .footcode{
+	display: block;
+}
+.footleft>h1>div>.phone{
+	line-height:18px;margin-bottom:7px;
+}
+.footleft>h1>div.footleftlogo:hover p{
+	color:#878787;
+}
+.footcode{
+	width:240px;height:186px;position: absolute;left:0px;bottom:44px;display:none;
+}
+.footcode div{
+	height:144px;width:120px;text-align:center; float:left;background:#fff;
+}
+.friend{
+	width:800px;height:108px;margin-top:29px;font-size: 12px;
+    color: #5c5c5c; letter-spacing: 3px;/*background:red;*/
+}
+.friend ul{
+	width:800px; height:14px; margin-bottom:9px;
+}
+.friend ul li{
+	float:left;
+}
+.friend ul li.have{
+	padding:0 10px;
+}
+.friend ul li.have a{
+	color: #5c5c5c;
+}
+.friend ul li.have:hover a{
+	color:#878787;
+}
+.footer-bg>.footer>.footleft>.friend>p{
+	width:100%; height:16px;
+}
+.minlogo{
+	width:200px;height:30px;float:left;
+	padding-top:45px;
+}
+.minlogo ul li{
+	float:right;height:30px;margin-left:27px;
+}
+.minlogo ul li a{
+	display:block;height:20px;background: url(../icon.png)no-repeat;
+	opacity:0.2;
+}
+.minlogo ul li.logoone a{
+	width:18px;background-position:-129px -25px;
+}
+.minlogo ul li.logotwo a{
+	width:23px;background-position:-150px -23px;
+}
+.minlogo ul li.logothr a{
+	width:26px;background-position:-100px -23px;position:relative;
+}
+.minlogo ul li a:hover{
+	opacity:1;
+}
+.minlogo ul li.logothr a:hover .logoonecode{
+	display:block;
+}
+.minlogo ul li.logothr a .logoonecode{
+	width:145px; height:194px;position:absolute;left:-60px;top:-193px;display:none;
+	z-index:1000;
+}
+.minlogo ul li.logothr a .logoonecode div{
+	width:145px;height:145px;background: url(../icon.png)no-repeat;
+	background-position:0 -148px;
+}
+.mao{
+	width:59px;height:59px;position:fixed;bottom: 44px;right: 44px;
+    
+}
+.mao a{
+	display:block;background: url(../icon.png);width:59px;height:59px;
+	background-position:-20px -813px;opacity:0.3;
+}
+.mao a:hover{
+	opacity:1;
+}
+.call{
+	width:90px;height:30px;position:fixed;bottom: 0px;right: 27px;
+}
+.call a{
+	display: block; width:90px;height:30px;background-color:#5b799a; color: #fff;
+   	border-radius: 4px;font-size: 13px; text-decoration: none;line-height:30px;
+    text-align:center;
+}
+.call a img{
+	margin:5px 0 0 6px;float:left;
+}

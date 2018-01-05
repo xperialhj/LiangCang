@@ -160,7 +160,7 @@ header ul .last:hover a{
 .Nav{
 	width:100%;
 	height:49px;
-	margin-bottom: 25px;
+	/*margin-bottom: 25px;*/
 	z-index: 1000;
 }
 .nav{
@@ -226,22 +226,42 @@ header ul .last:hover a{
 .position{
 	width:1000px;
 	height:20px;
+	line-height:20px;
 	margin:0 auto;
-	padding:10px 0 5px;
+	padding: 10px 0px 5px;
+}
+.position>a{
+	font-size:12px;color:#666;
+}
+#lasta{
+	color:#bfbfbf;
 }
 #classify{
 	width:1000px;
 	margin:0 auto;
 	margin-top: 10px;
 }
+#classify ul{
+	position:relative;
+}
 #classify ul li{
 	float: left;
     display: block;
-    padding: 6px 20px 5px 0px;
+    padding: 6px 20px 5px;
     height: 25px;
     border-bottom: 1px solid #ededed;
     margin-top:10px;
     cursor: pointer;
+    font-size:13px;
+    text-align:center;
+    
+}
+#classify ul li a{
+	color:#333;
+}
+#classify ul li:hover{
+    height: 26px;
+    border-bottom: 1px solid #000;
 }
 #classify ul:after{
 	content:"";
@@ -257,18 +277,39 @@ header ul .last:hover a{
 	width:316px;
 	height:366px;
 	float:left;
-	margin-left:15px;
+	margin:0px 12px 0px 4px;
 	position:relative;
 }
 #goods ul li>img{
 	width:316px;
 	height:316px;
 }
+#goods>ul>li>a{
+	color:#878787;
+	font-size:14px;
+	line-height:40px;
+	float:left;
+	width:216px; height:40px;
+}
+#goods>ul>li>#fav{
+	color:#878787;
+	font-size:14px;
+	float:right;
+	width:55px; height:40px;
+}
+#goods>ul>li>#fav>img{
+	float:right;
+	margin-top:11px;
+}
+#goods>ul>li>input{
+	width:42px;height:30px;border-radius:5px;margin-top:5px;
+	
+}
 #goods ul li .desc{
 	width:316px;
 	height:316px;
 	color:white;
-	text-align: center;
+	text-align:center;
 	display:none;
 	position:absolute;left:0px;top:0px;
 	background:rgba(0,0,0,0.5);
@@ -278,7 +319,30 @@ header ul .last:hover a{
 }
 #goods ul li .desc h2{
 	padding:10px 0 0 10px;
-	color:dodgerblue;
-	text-align: left;
+	color:#0c6eba;
+	text-align:left;
 	margin-bottom: 100px;
+	font-style: italic;
+}
+#goods ul li .desc h3{
+	font-size:14px; line-height:20px;
+}
+#goods ul li .desc p{
+	font-size: 12px;
+	width:85%;
+    font-weight: normal;
+    margin:5px 0px 0px 24px;
+    line-height:20px;
+}
+.page{
+	width:1000px;
+	height:50px;
+	margin:0 auto;
+}
+.page ul{
+	float:right;
+}
+.page ul li{
+	width:50px;
+	float:left;
 }

@@ -18,7 +18,8 @@
 					localStorage.setItem("username",strUsername)
 					localStorage.setItem("password",strPassword)
 				}
-				location.href = "https://xperialhj.github.io/liangcang";
+				localStorage.setItem("token",obj.data.token);
+				location.href = "index.html";
 			}else{
 				alert(obj.Message);
 			}
@@ -35,7 +36,7 @@
 		}
 			loginOrRegister(json,function(obj){
 				alert("自动登录成功");
-				 location.href = "https://xperialhj.github.io/liangcang";
+				 location.href = "index.html";
 			})
 		}
 	}

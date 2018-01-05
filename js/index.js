@@ -60,3 +60,55 @@
      move(aUl,{'left':-liWidth*i},500);
 		}})(i);
 	}
+	
+var oHg=document.getElementById("hotgoods");
+getHotGoods();
+
+var oHand=document.getElementById("hand");
+oHand.onmouseover=function(){
+	if(oHand.lock){
+		return;
+	}
+	move(oHand,{'left':'-25px'},500,function(){
+		move(this,{'left':'0px'},500)
+		}
+	);
+}
+var oGoback=document.getElementById("goback");
+oGoback.onclick=function(){
+	var top=document.documentElement.scrollTop||document.body.scrollTop
+	var timer=setInterval(function(){
+		top-=50;
+		document.documentElement.scrollTop =top;
+		document.body.scrollTop =top;
+		if(top<=0){
+		  clearInterval(timer);
+		}
+	},10)
+}
+function getHotGoods(){
+		var obj={
+			method:"GET",
+			url:"http://csit.top/api_goods.php",
+			json:{
+				page:1,
+				pagesize:18
+			},
+			callback:function(json){
+				var arr=json.data;
+				var oUl=document.createElement("ul");
+				oHg.innerHTML="";
+				oHg.appendChild(oUl);
+					for (var i = 0; i < arr.length; i++) {
+					 var oLi=document.createElement("li");
+					 oLi.innerHTML='<img src="'+ arr[i].goods_thumb +'"/>'+
+					 '<a>'+ arr[i].goods_name +'</a>'+
+					 '<input type="button" value="+" onclick="addcart('+arr[i].goods_id+')"/>'+ 
+					 '<a id="fav">'+ arr[i].star_number +'</a>'+
+					 '<div class="desc"><h2>￥' +arr[i].price +'</h2><h3>' +arr[i].goods_name +'</h3><p>'+ arr[i].goods_desc +'</p></div>';
+					 oUl.appendChild(oLi);
+					}
+			}
+	    }
+		ajax(obj);
+}

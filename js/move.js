@@ -1,16 +1,16 @@
-function move(ele,targetJSON,time,callBack){
+锘縡unction move(ele,targetJSON,time,callBack){
 	ele.lock=true;
 	if(arguments.length==4){
 		if(typeof arguments[0]!='object'||typeof arguments[1]!='object'||typeof arguments[2]!='number'||typeof arguments[3]!='function'){
-			//return alert('目标参数格式有误');
-			throw new Error('参数有误');
+			//return alert('鍙傛暟鏈夎');
+			throw new Error('鍙傛暟鏈夎');
 		}
 	}
 	else if(arguments.length==3){
 		//var length=4;
 		if(typeof arguments[0]!='object'||typeof arguments[1]!='object'||typeof arguments[2]!='number'){
-			//return alert('目标参数格式有误');
-			throw new Error('参数有误');
+			//return alert('鍙傛暟鏈夎');
+			throw new Error('鍙傛暟鏈夎');
 		}
 	callBack=null;
 	}

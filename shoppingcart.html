@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>购物车.良仓-生活美学指南</title>
-		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="shortcut icon" href="img/favicon.ico" />
 	</head>
-	<link rel="stylesheet" type="text/css" href="css/shoppingcar.css"/>
+	<link rel="stylesheet" type="text/css" href="css/shoppingcart.css"/>
 	<body>
 		<div id="head" class="header-bg">
 			<div class="header">
@@ -88,7 +88,7 @@
 		<div class="anyway">
 			<ul>
 				<li>
-					<input type="checkbox"/>
+					<input type="checkbox" id="allchecked"/>
 					<a href="javascript:;">全选</a>
 				</li>
 				<li class="two">
@@ -108,9 +108,14 @@
 				</li>
 			</ul>
 		</div>
+		
+		<div id="list">
+			
+		</div>
+		
 		<div class="mach-bg">
 			<div class="mach">
-				<p class="money">良品总价/<span>¥0.00</span></p>
+				<p class="money">良品总价/<span id="total">¥0.00</span></p>
 				<p class="mai">
 					<input type="button" value="立即结算">
 				</p>
@@ -157,11 +162,11 @@
 							<p >客户端下载</p>
 							<div class="footcode">
 								<div>
-									<img src="code.png"/>
+									<img src="img/code.png"/>
 									<p>下载IPHONE版</p>
 								</div>
 								<div>
-									<img src="code.png"/>
+									<img src="img/code.png"/>
 									<p>下载安卓版</p>
 								</div>
 							</div>
@@ -218,9 +223,11 @@
 		</div>
 		<div class="call">
 			<a href="#">
-				<img src="calllogo.png"/>
+				<img src="img/calllogo.png"/>
 				<span>联系客服</span>
 			</a>
 		</div>
 	</body>
 </html>
+<script type="text/javascript" src="js/ajax.js" ></script>
+<script type="text/javascript" src="js/shoppingcart.js" ></script>

@@ -393,6 +393,11 @@ header ul .last:hover a{
     height: 15px;width: 27px;position: absolute;left: 0; top: 1px;
     background:url(../img/icon.png);background-position: -173px -356px;
 }
+.titleour a{
+	width:177px;
+	height:15px;
+	display:block;
+}
 .ourmany{
 	width:1000px; height:60px;padding-top:42px; margin:0 auto;background:#fbfdfe;
 }

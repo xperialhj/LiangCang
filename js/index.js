@@ -63,16 +63,27 @@
 	
 var oHg=document.getElementById("hotgoods");
 getHotGoods();
-
+//!!
 var oHand=document.getElementById("hand");
 oHand.onmouseover=function(){
-	if(oHand.lock){
+	setTimeout(function(){
+		if(oHand.lock){
+		console.log('lock')
 		return;
 	}
 	move(oHand,{'left':'-25px'},500,function(){
-		move(this,{'left':'0px'},500)
-		}
-	);
+		move(this,{'left':'0px'},500)})	
+//		var time=setInterval(function(){
+//			if(oHand.style.left!='0px'){
+//				console.log(oHand.lock)
+//			    oHand.lock=true;
+//			}else if(oHand.style.left=='0px'){
+//				oHand.lock=false;
+//				console.log(oHand.lock)
+//				clearInterval(time);
+//			}
+//		},10)		 
+	},1000);
 }
 var oGoback=document.getElementById("goback");
 oGoback.onclick=function(){

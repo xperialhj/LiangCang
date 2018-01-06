@@ -17,7 +17,7 @@ li{
 	width:95px;height:38px;margin: 9px 0;background:#25292e;float:left;opacity:1;
 }
 .header-logo a{
-	display:block;width:95px;height:38px;background:url(../icon.png)no-repeat;
+	display:block;width:95px;height:38px;background:url(../img/icon.png)no-repeat;
 }
 .header-logo:hover{
 	opacity:0.8;
@@ -124,7 +124,7 @@ li{
 	width:260px; height:40px; float:right; padding-top:9px;
 }
 .nav>.search>.searchicon{
-	float:right; width:33px; height:36px; background: url(../icon.png)no-repeat;padding-top:4px;
+	float:right; width:33px; height:36px; background: url(../img/icon.png)no-repeat;padding-top:4px;
 	background-position: -167px -149px;
 }
 .car{
@@ -153,6 +153,53 @@ li{
 }
 .anyway ul li a{
 	color:#666;
+}
+
+#list{
+	width:1000px; height:auto; margin:0 auto;
+	background:bisque;
+}
+#list ul:after{
+	content:"";
+	display: block;
+	clear:both;
+}
+#list ul li{
+	width:1000px;
+}
+#list ul li .pic{
+	width:120px;
+	height:100px;
+	float:left;
+}
+#list ul li .pic img{
+	width:70px;
+}
+#list ul li>a{
+	width:300px;
+	height:100px;
+	display:block;
+	float:left;
+}
+#list ul li .num{
+	width:130px;
+	height:100px;
+	float:left;
+}
+#list ul li>span{
+	width:170px;
+	height:100px;
+	display:block;
+	float:left;
+}
+#list ul li .delete{
+	width:100px;
+	height:100px;
+	float:left;
+}
+#list ul li .delete a{
+	color:deepskyblue;
+	cursor:pointer;
 }
 .mach-bg{
 	width:1000px; height:102px; margin:0 auto; padding:20px 0px 108px;
@@ -188,11 +235,11 @@ li{
 }
 .titleour{
 	position:relative;margin: 0 auto;padding-left: 45px;width: 177px;
-    height: 16px; background:url(../icon.png);background-position: 45px -417px;
+    height: 16px; background:url(../img/icon.png);background-position: 45px -417px;
 }
 .titleour p{
     height: 15px;width: 27px;position: absolute;left: 0; top: 1px;
-    background:url(../icon.png);background-position: -173px -356px;
+    background:url(../img/icon.png);background-position: -173px -356px;
 }
 .ourmany{
 	width:1000px; height:60px;padding-top:42px; margin:0 auto;background:#fbfdfe;
@@ -201,7 +248,7 @@ li{
 	width:250px; height:60px; float:left;
 }
 .ourmany ul li .ourlogo{
-	background:url(../icon.png)no-repeat left;margin-right:16px;
+	background:url(../img/icon.png)no-repeat left;margin-right:16px;
 }
 .ourmany ul li.ourone .ourlogo{
 	float:left; width:56px; height:60px; background-position: 0 -355px;
@@ -237,7 +284,7 @@ li{
 .footleft>h1>div{
 	position:relative;padding-left:60px;font-size: 14px; font-weight:normal;
    	width: 136px; height: 44px; color: #5c5c5c; letter-spacing: 2px;
-   	cursor: pointer;background:url(../icon.png)no-repeat;letter-spacing: 2px;
+   	cursor: pointer;background:url(../img/icon.png)no-repeat;letter-spacing: 2px;
  	background-position: -175px 0;
 }
 .footleft>h1>div:hover .footcode{
@@ -285,7 +332,7 @@ li{
 	float:right;height:30px;margin-left:27px;
 }
 .minlogo ul li a{
-	display:block;height:20px;background: url(../icon.png)no-repeat;
+	display:block;height:20px;background: url(../img/icon.png)no-repeat;
 	opacity:0.2;
 }
 .minlogo ul li.logoone a{
@@ -308,7 +355,7 @@ li{
 	z-index:1000;
 }
 .minlogo ul li.logothr a .logoonecode div{
-	width:145px;height:145px;background: url(../icon.png)no-repeat;
+	width:145px;height:145px;background: url(../img/icon.png)no-repeat;
 	background-position:0 -148px;
 }
 .mao{
@@ -316,7 +363,7 @@ li{
     
 }
 .mao a{
-	display:block;background: url(../icon.png);width:59px;height:59px;
+	display:block;background: url(../img/icon.png);width:59px;height:59px;
 	background-position:-20px -813px;opacity:0.3;
 }
 .mao a:hover{

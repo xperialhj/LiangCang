@@ -49,14 +49,17 @@ function ajax(obj){
     	obj.url=obj.url+"?"+st;
     }
     xhr.open(obj.method, obj.url, true);
+    if(obj.head){
+ 			xhr.setRequestHeader(obj.head, obj.headValue);
+ 		}
     if(obj.method=="GET"){
     	xhr.send();
     }else{
     	var st=getString(obj.json);
-    	if(obj.head){
- 			xhr.setRequestHeader(obj.head, obj.headValue);
- 		}
  		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
  		xhr.send(st);
     }
 }
+
+
+

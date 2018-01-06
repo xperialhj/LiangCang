@@ -6,23 +6,23 @@
 		<style type="text/css">
 		*{margin:0px;
 		padding:0px;}
-			#box{
+			#chat_box{
 				width: 360px;
 				height: auto;
 				/*background: red;*/
 				border-radius: 5px;
 				border: 1px solid #ccc;
 				display: none;
-				position: absolute;left: 0px;top: 0px;
+				position: fixed;left:75%;margin-left:0px;top: 27%;margin-top: 0px;
 			}
-			#box2{
+			#chat_box2{
 				height: 41px;
 				background: #5b799a;
 				line-height: 41px;
 				color: white;
 				border-radius: 5px;
 			}
-			#box22{
+			#chat_box22{
 				width: 30px;
 				height: 30px;
 				border-radius: 5px;
@@ -32,32 +32,32 @@
 				margin-right: 10px;
 				cursor: pointer;
 			}
-			#box22 img{
+			#chat_box22 img{
 				border: 1px solid #fff;
 				border-radius: 6px;
 			}
-			#box2 span{
+			#chat_box2 span{
 				margin-left:10px ;
 			}
-			#box2>a>img{
+			#chat_box2>a>img{
 				float: right;
 				margin-top: 5px;
 			}
-			#box3{
+			#chat_box3{
 				width: auto;
 				height: 369px;
 				background: #f4f7fa;
 			}
-			#box4{
+			#chat_box4{
 				width: auto;
 				height: 140px;
 			}
-			#box4 ul li{
+			#chat_box4 ul li{
 				float: left;
 				list-style: none;
 				margin-left: 8px;
 			}
-			#box4 textarea{
+			#chat_box4 textarea{
 				width: 350px;
 				height: 70px;
 				outline:none;
@@ -65,7 +65,7 @@
 				resize: none;
 				padding-left: 10px;
 			}
-			#but{
+			#chat_but{
 				width: 100px;
 				height: 30px;
 				border-radius: 5px;
@@ -76,7 +76,7 @@
 				float: right;
 				margin: -5px 5px;
 			}
-			#box6{
+			#chat_box6{
 				width: 90px;
 				height: 30px;
 				background: #5b799a;
@@ -87,38 +87,43 @@
 				position: absolute;right: 10px;bottom: 10px;
 				padding-left: 3px;
 			}
-			#box6 span{
+			#chat_box6 span{
 				float: right;
 				margin-right: 5px;
 			}
+			#chat_bo{
+				width: 200vh;
+				height:100vh;
+				background: #fff;
+			}
 		</style>
 	</head>
-	<body>
-		<div id="box">
-			<div id="box2">
+	<body id="chat_bo">
+		<div id="chat_box">
+			<div id="chat_box2">
 				
-				<div id="box22">
+				<div id="chat_box22">
 					<img src="img/2.png"/>
 				</div>
 				<span>良仓</span>
 				<a href="#"><img src="img/1.png"/></a>
 			</div>
-			<div id="box3">
-				<ul id="ul">
+			<div id="chat_box3">
+				<ul id="chat_ul">
 				</ul>
 			</div>
-			<div id="box4">
+			<div id="chat_box4">
 				<ul>
 					<li><a href="#"><img src="img/4.png"/></a></li>
 					<li><a href="#"><img src="img/6.png"/></a></li>
 					<li><a href="#"><img src="img/5.png"/></a></li>
 					<li><a href="#"><img src="img/3.png"/></a></li>
 				</ul>
-				<textarea placeholder="点击输入内容..." id="txt" ></textarea>
-				<input type="button" id="but" value="发送" />
+				<textarea placeholder="点击输入内容..." id="chat_txt" ></textarea>
+				<input type="button" id="chat_but" value="发送" />
 			</div>
 		</div>
-		<div id="box6">
+		<div id="chat_box6">
 			<img src="img/7.png"/>
 			<span >
 				联系客服
@@ -127,21 +132,27 @@
 	</body>
 </html>
 <script type="text/javascript">
-	var oBox=document.getElementById('box')
-	var oTxt=document.getElementById('txt');
-	var oBox3=document.getElementById('box3');
-	var oBut=document.getElementById('but')
-	var oUi=document.getElementById('ul')
-	var oBox6=document.getElementById('box6')
-	var oBox22=document.getElementById('box22')
+	var oBo=document.getElementById('chat_bo')
+	var oBox=document.getElementById('chat_box')
+	var oTxt=document.getElementById('chat_txt');
+	var oBox3=document.getElementById('chat_box3');
+	var oBut=document.getElementById('chat_but')
+	var oUi=document.getElementById('chat_ul')
+	var oBox6=document.getElementById('chat_box6')
+	var oBox22=document.getElementById('chat_box22')
 	oBut.onclick=function(){
 		var oLi=document.createElement('li')
 		var oSpan=document.createElement('span')
 		var cc=oTxt.value;
 		oTxt.value="";
 //		oLi.innerHTML=oSpan;
-		oSpan.innerHTML+=cc;
+//		oSpan.innerHTML+=cc;
 //		oLi.style.float="right"
+		if(oSpan.length>=oBox.clientWidth){
+			overflow:hidden;
+		}else{
+				oSpan.innerHTML+=cc;
+		}
 		oLi.style.textAlignLast="right"
 		oLi.style.paddingTop="20px"
 		oLi.style.paddingRight="10px"
@@ -149,10 +160,9 @@
 		oSpan.style.background="#999"
 		oLi.style.listStyle="none"
 		oSpan.style.borderRadius="30px"
-//		yy.style.width="100px"
-//		yy.style.height="100px"
 		oUi.appendChild(oLi)
 		oLi.appendChild(oSpan)
+		
 	}
 	oBox6.onclick=function(){
 		oBox.style.display="block"
@@ -173,8 +183,8 @@
 			var y=event.clientY-t;
 			if(x <= 0) x = 0;
 			if(y <= 0) y = 0;
-			if(x >= window.clientWidth - oBox.offsetWidth) x = window.clientWidth - oBox.offsetWidth;
-			if(y >= window.clientHeight - oBox.offsetHeight) y = window.clientHeight - oBox.offsetHeight;
+			if(x >= oBo.clientWidth - oBox.offsetWidth) x = oBo.clientWidth - oBox.offsetWidth;
+			if(y >= oBo.clientHeight - oBox.offsetHeight) y = oBo.clientHeight - oBox.offsetHeight;
 			oBox.style.left=x+"px"
 			oBox.style.top=y+"px"
 		}

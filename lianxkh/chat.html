@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="chat_bo">
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
@@ -84,7 +84,7 @@
 				color: #fff;
 				border-radius: 5px;
 				font:12px/30px "微软雅黑";
-				position: absolute;right: 10px;bottom: 10px;
+				position: fixed;right:2%;margin-left:0px;bottom: 5%;margin-top: 0px;
 				padding-left: 3px;
 			}
 			#chat_box6 span{
@@ -92,13 +92,13 @@
 				margin-right: 5px;
 			}
 			#chat_bo{
-				width: 200vh;
-				height:100vh;
+				width: 100vh;
+				height:1000px;
 				background: #fff;
 			}
 		</style>
 	</head>
-	<body id="chat_bo">
+	<body >
 		<div id="chat_box">
 			<div id="chat_box2">
 				
@@ -146,13 +146,9 @@
 		var cc=oTxt.value;
 		oTxt.value="";
 //		oLi.innerHTML=oSpan;
-//		oSpan.innerHTML+=cc;
+		oSpan.innerHTML+=cc;
 //		oLi.style.float="right"
-		if(oSpan.length>=oBox.clientWidth){
-			overflow:hidden;
-		}else{
-				oSpan.innerHTML+=cc;
-		}
+		oSpan.style.wordBreak="break-word"
 		oLi.style.textAlignLast="right"
 		oLi.style.paddingTop="20px"
 		oLi.style.paddingRight="10px"

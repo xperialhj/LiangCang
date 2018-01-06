@@ -5,19 +5,20 @@
 		<title>良仓.生活美学平台</title>
 		<link rel="shortcut icon" href="http://7q5ckq.com1.z0.glb.clouddn.com/static/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/LoginWindow.css" />
 	</head>
 	<body>
-		<div class="Header">
-		    <header id="head">
+		<div class="Header" id="header">
+		    <header>
 			  <a class="logo" href="javascript:;"></a>
 			  <ul>
-			  	<li>
-			  		<a class="login" href="javascript:;">登陆</a>
-			  		<a class="register" href="javascript:;">注册</a>
+			  	<li id="info">
+			  		<a class="login" href="login.html">登陆</a>
+			  		<a class="register" href="register.html">注册</a>
 			  	</li>
 			  	<li class="line"></li>
 			  	<li class="shoppingcart">
-			  		<a href="javascript:;">购物车</a>
+			  		<a href="shoppingcart.html"><span id="cartnum"></span>购物车</a>
 			  		<div class="cart">
 			  			<div class="goods"><a>你的购物车暂时没有商品...</a></div>
 			  			<a class="addgoods" href="javascript:;">快去抢购良仓商品吧！</a>
@@ -42,11 +43,11 @@
 			  </ul>
 		    </header>
 		</div>
-		<div class="Nav">
+		<div class="Nav"  id="nav">
 			<div class="nav">
 				<ul>
 					<li class="home"><a href="javascript:;">首页</a></li>
-					<li><a href="javascript:;">商店</a></li>
+					<li><a href="shop.html">商店</a></li>
 					<li><a href="javascript:;">杂志</a></li>
 					<li><a href="javascript:;">分享</a></li>
 					<li class="last"><a href="javascript:;">达人</a></li>
@@ -99,7 +100,7 @@
 	    <div class="main_2" id="hotgoods">
 	    	
 	    </div>
-	    
+	    <div class="getmore"></div>
 	    
 	    <!--首页底部 结构 开始拼接-->
 	    <div class="our-bg">
@@ -199,14 +200,95 @@
 		<div class="mao">
 			<a href="javascript:;" id="goback"></a>
 		</div>
-		<div class="call">
+		<!--<div class="call">
 			<a href="#">
 				<img src="img/calllogo.png"/>
 				<span>联系客服</span>
 			</a>
+		</div>-->
+		
+		
+		
+		
+		<!--聊天框-->
+		<div id="chat_box">
+			<div id="chat_box2">
+				
+				<div id="chat_box22">
+					<img src="img/2.png"/>
+				</div>
+				<span>良仓</span>
+				<a href="#"><img src="img/1.png"/></a>
+			</div>
+			<div id="chat_box3">
+				<ul id="chat_ul">
+				</ul>
+			</div>
+			<div id="chat_box4">
+				<ul>
+					<li><a href="#"><img src="img/4.png"/></a></li>
+					<li><a href="#"><img src="img/6.png"/></a></li>
+					<li><a href="#"><img src="img/5.png"/></a></li>
+					<li><a href="#"><img src="img/3.png"/></a></li>
+				</ul>
+				<textarea placeholder="点击输入内容..." id="chat_txt" ></textarea>
+				<input type="button" id="chat_but" value="发送" />
+			</div>
+		</div>
+		<div id="chat_box6">
+			<img src="img/7.png"/>
+			<span >
+				联系客服
+			</span>
+		</div>
+		
+		<!--弹窗登陆-->
+		<div id="LoginMid"><!--中心盒子-->
+			<div id="LoginMid-top"><!--头部盒子-->
+
+				<span id="Loginliangcang"><!--头部登录良仓-->
+					登录良仓
+				</span>
+				<img src="img/close.png" id="close"/><!--关闭-->
+			</div>
+			<div id="LoginMid-left">
+				<div class="box1">
+					<input id="username" type="text" value="手机号/用户名/邮箱"; onfocus="if 
+               		 (value =='手机号/用户名/邮箱'){value =''}" onblur="if(value =='')
+               		 {value='手机号/用户名/邮箱'}" />
+				</div>
+				<div class="box1">
+					<input id="userpassword" type="password" placeholder="密码" style="padding-left:25px;"
+              		  onfocus="if 
+                	(placeholder =='密码'){placeholder =''}" onblur="if(placeholder =='')
+               		{placeholder='密码'}" />
+				</div>
+				<div class="box1">
+					<input type="checkbox" id="autologin" />
+					<span id="SevenAutoLogin">
+						七天内自动登录
+					</span>
+					<a id="ForgetPassword" href="javascript:;">忘记密码?</a>
+				</div>
+				<div class="box1">
+					<input type="button" id="Login" value="登录良仓" />
+					<a id="registerliangcang" href="register.html">注册良仓</a>
+				</div>
+			</div>
+			<div id="LoginMid-right">
+				<div id="ThirdLogin">
+					<p id="ThirdLogin-P">第三方登录：</p>
+					<a href="javascript:;"><img class=" MoreLogin" src="img/tengxunmouse.png"/></a>
+					<a href="javascript:;"><img class=" MoreLogin" src="img/qqnormal.png"/></a>
+					<a href="javascript:;"><img class=" MoreLogin" src="img/xinlangnormal.png"/></a>
+					<a href="javascript:;"><img class=" MoreLogin" src="img/doubannormal.png"/></a>
+				</div>
+				
+			</div>
 		</div>
 	</body>
 </html>
 <script src="js/move.js"></script>
 <script type="text/javascript" src="js/ajax.js" ></script>
 <script type="text/javascript" src="js/index.js" ></script>
+<script type="text/javascript" src="js/LoginWindow.js" ></script>

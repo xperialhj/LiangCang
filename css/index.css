@@ -15,6 +15,7 @@ a{
 	width:100%;
 	height:56px;
 	background:#25292e;
+	z-index: 1000;
 }
 header{
 	width:1000px;
@@ -46,6 +47,8 @@ header ul li{
 	letter-spacing: 1px;
 	padding:0 15px;
 	float:left;
+	color:gray;
+	position:relative;
 }
 header ul li a{
 	color:#666;
@@ -72,7 +75,7 @@ header ul li .login,header ul li .register{
 }
 .cart{
 	width:320px;
-	position:absolute;top:56px;right:0px;
+	position:absolute;top:56px;right:-120px;
 	background:#292f34;
 	display: none;
 	z-index: 5;
@@ -101,9 +104,8 @@ header ul .last:hover a{
 	color:#ccc;
 }
 .cart .goods{
-	width:280px;
-	height:70px;
-	padding:0 20px;
+	width:320px;
+	height:auto;
 	text-align: center;
 }
 .cart .goods a{
@@ -119,6 +121,7 @@ header ul .last:hover a{
 	background: #7dbfde;
 	display:block;
 	text-align: center;
+	float:left;
 }
 .cart .addgoods:hover{
 	background: #96c8e0;
@@ -127,7 +130,7 @@ header ul .last:hover a{
 	width:190px;
 	font-size:14px;
 	line-height:44px;
-	position:absolute;top:56px;right:0px;
+	position:absolute;top:56px;right:-70px;
 	background:#292f34;
 	display: none;
 	z-index: 5;
@@ -160,12 +163,14 @@ header ul .last:hover a{
 	width:100%;
 	height:49px;
 	margin-bottom: 25px;
+	z-index: 999;
 }
 .nav{
 	width:1000px;
 	height:45px;
 	border-bottom: 4px solid #ededed;
 	margin:0 auto;
+	background:white;
 }
 .nav ul{
 	float:left;
@@ -346,25 +351,60 @@ header ul .last:hover a{
 	width:1000px;
 	/*height:auto;*/
 	margin:20px auto 10px auto;
-	background: bisque;
+	/*background: bisque;*/
 	overflow:hidden;
 }
 #hotgoods ul li{
 	width:316px;
 	height:366px;
 	float:left;
-	margin-left:15px;
+	margin:20px 6px 0px 10px;
 	position:relative;
 }
 #hotgoods ul li>img{
 	width:316px;
 	height:316px;
 }
+#hotgoods>ul>li>#brand{
+	color:#878787;
+	font-size:14px;
+	line-height:40px;
+	float:left;
+	padding-left:50px;
+	width:160px; height:40px;
+	background:url(../img/shoplogo.jpg)no-repeat left;
+	overflow: hidden;
+	cursor: pointer;
+}#hotgoods>ul>li>.fav{
+	color:#878787;
+	font-size:14px;
+	float:right;
+	width:55px; height:40px;
+	line-height:40px;
+	cursor: pointer;
+}
+#hotgoods>ul>li>.fav>.Fav{
+	width:35px;
+	height:40px;
+	float:left;
+	display:none;
+}
+#hotgoods>ul>li>.fav>img{
+	float:right;
+	margin-top:11px;
+}
+#hotgoods>ul>li>input{
+	width:30px;height:30px;border-radius:5px;margin-top:5px;
+	background: url(../img/shopcarlogo.jpg)no-repeat;
+	border-style:none;
+	outline:none;
+	cursor: pointer;
+}
 #hotgoods ul li .desc{
 	width:316px;
 	height:316px;
 	color:white;
-	text-align: center;
+	text-align:center;
 	display:none;
 	position:absolute;left:0px;top:0px;
 	background:rgba(0,0,0,0.5);
@@ -374,12 +414,33 @@ header ul .last:hover a{
 }
 #hotgoods ul li .desc h2{
 	padding:10px 0 0 10px;
-	color:dodgerblue;
-	text-align: left;
+	color:#0c6eba;
+	text-align:left;
 	margin-bottom: 100px;
+	font-style: italic;
 }
-
-
+#hotgoods ul li .desc h3{
+	font-size:14px; line-height:20px;
+}
+#hotgoods ul li .desc p{
+	font-size: 12px;
+	width:85%;
+    font-weight: normal;
+    margin:5px 0px 0px 24px;
+    line-height:20px;
+}
+.getmore{
+	height: 50px;
+    margin: 90px auto;
+    width: 148px;
+    background: url(../img/icon.png) no-repeat;
+    background-position: 0 -640px;
+    cursor: pointer;
+    zoom: 1;
+}
+.getmore:hover{
+	background-position: 0 -688px;
+}
 /*首页底部  样式  开始拼接*/
 .our-bg{
 	width:100%;height:120px;border-top:1px solid #ededed;background:#fbfdfe;
@@ -521,12 +582,13 @@ header ul .last:hover a{
 }
 .mao a{
 	display:block;background: url(../img/icon.png);width:59px;height:59px;
-	background-position:-20px -813px;opacity:0.3;
+	background-position:-20px -813px;opacity:1;
+	display: none;
 }
 .mao a:hover{
-	opacity:1;
+	opacity:0.3;
 }
-.call{
+/*.call{
 	width:90px;height:30px;position:fixed;bottom: 0px;right: 27px;
 }
 .call a{
@@ -536,4 +598,178 @@ header ul .last:hover a{
 }
 .call a img{
 	margin:5px 0 0 6px;float:left;
+}*/
+/*登录信息*/
+#info:hover #userinfo{
+	display: block;
+}
+#info img{
+	width:30px;
+	margin:12px 4px;
+	float:left;
+}
+#userinfo{
+	width:150px;
+	font-size:14px;
+	line-height:44px;
+	position:absolute;top:56px;left:-20px;
+	background:#292f34;
+	display: none;
+	z-index: 5;
+}
+#userinfo a{
+	width:120px;
+	height:45px;
+	padding: 0 15px;
+	display:block;
+	-webkit-transition: all .3s;
+}
+#userinfo a span{
+	width:120px;
+	height:44px;
+	color:#ccc;
+	border-bottom:1px solid #3f4449;
+	display:block;
+	text-align: center;
+}
+#userinfo a:hover{
+	background: #2e353d;
+}
+#userinfo a span.last{
+	border-bottom:none;
+}
+.goods ul li{
+   height:75px;
+   padding-top:20px;
+}
+.goods ul li:hover{
+	background: #2e353d;
+}
+.goods ul li img{
+	width:50px;
+	float:left;
+}
+.goods ul li span{
+	height:30px;
+	line-height:30px;
+	padding-left:10px;
+	display: block;
+	float:left;
+	text-align: left;
+}
+.goods ul li .goodsname{
+	width:220px;
+}
+.goods ul li .goodsprice{
+	float:right;
+}
+#cartnum{
+	color:#0c79cc;
+	font-size:16px;
+	line-height:55px;
+	margin-right:4px;
+}
+/*聊天框*/
+#chat_box{
+	width: 360px;
+	height: auto;
+	/*background: red;*/
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	display: none;
+	position: fixed;left:75%;top: 27%;
+	background:white;
+	z-index: 1000;
+}
+#chat_box2{
+	height: 41px;
+	background: #5b799a;
+	line-height: 41px;
+	color: white;
+	border-radius: 5px;
+}
+#chat_box22{
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	/*border: 1px solid #fff;*/
+	float: right;
+	margin-top: 4px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+#chat_box22 img{
+	border: 1px solid #fff;
+	border-radius: 6px;
+}
+#chat_box2 span{
+	margin-left:10px ;
+}
+#chat_box2>a>img{
+	float: right;
+	margin-top: 5px;
+}
+#chat_box3{
+	width: auto;
+	height: 369px;
+	background: #f4f7fa;
+}
+#chat_box4{
+	width: auto;
+	height: 140px;
+}
+#chat_box4 ul li{
+	float: left;
+	list-style: none;
+	margin-left: 8px;
+}
+#chat_box4 textarea{
+	width: 350px;
+	height: 70px;
+	outline:none;
+	border: none;
+	resize: none;
+	padding-left: 10px;
+}
+#chat_but{
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	color: #fff;
+	outline:none;
+	border: none;
+	cursor: pointer;
+	float: right;
+	margin: -5px 5px;
+}
+#chat_box6{
+	width: 90px;
+	height: 30px;
+	background: #5b799a;
+	cursor: pointer;
+	color: #fff;
+	border-radius: 5px;
+	font:12px/30px "微软雅黑";
+	position: fixed;right: 28px;bottom: 10px;
+	padding-left: 3px;
+}
+#chat_box6 span{
+	float: right;
+	margin-right: 5px;
+}
+#chat_ul{
+	width:180px;
+	float:right;
+}
+#chat_ul li{
+    text-align:left;
+	padding:5px 10px;
+	margin:15px 0;
+    background:#999999;
+	width:auto;
+	height:auto;
+	border-radius:10px;
+}
+body{
+	height:100vh;
 }

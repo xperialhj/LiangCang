@@ -1,0 +1,138 @@
+/*全局样式*/
+*{margin:0;padding:0;}
+a{text-decoration: none;}
+img{border:none;}
+
+/*中心盒子*/
+#LoginMid{
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin:-158px -326px;
+	width:652px;
+	height:318px;
+	/*border:1px solid red;*/
+	background:url(../img/log_bg.jpg)no-repeat;
+	display: none;
+}
+/*头部盒子*/
+#LoginMid-top{
+	width:652px;height:92px;
+/*	border:1px solid green;*/
+}
+/*头部登陆良仓*/
+#Loginliangcang{
+	line-height:92px;
+	color:#fff;
+	padding-left:42px;
+	float:Left;
+}
+/*关闭*/
+#close{
+	float:right;
+	display: block;
+	cursor:pointer;
+	margin:30px 42px 0px 0px;
+}
+/*左边盒子*/
+#LoginMid-left{
+	width:324px;height:224px;
+/*	border:1px solid orange;*/
+	float:left;
+}
+/*右边盒子*/
+#LoginMid-right{
+	width:324px;height:224px;
+	float:left;
+	/*border:1px solid lawngreen;*/
+	float:left;
+}
+
+.box1{/*第一个inpute盒子*/
+	width:324px;height:40px;/*border:1px solid red;*/
+	margin:10px 0px;
+}
+
+#username{/*用户名的input*/
+	width:244px;height:40px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    outline: none;
+   	background:rgba(0,0,0,0.4);
+   	padding-left:20px;
+   	margin-left:40px;
+}
+ #userpassword{/*用户密码*/
+    width:244px;height:40px;
+    border: none;
+    font-size: 14px;
+    
+    outline: none;
+   	background:rgba(0,0,0,0.4);
+   	padding-left:20px;
+   	margin-left:40px;
+   	
+ }
+ /*谷歌兼容*/
+    input::-webkit-input-placeholder {
+	color: #FCFCFC;
+}
+/*ie低版本兼容*/
+input::-ms-input-placeholder {
+	color: #FCFCFC;
+}
+#autologin{/*自动登录*/
+	width:15px;height:15px;
+	float:left;
+	margin-top:2px;
+	margin:2px 4px 0 40px;
+}
+#SevenAutoLogin{/*七天自动登录*/
+	float:left;display: block;
+	
+	font-size: 12px;
+	color:#ffff;
+}
+#ForgetPassword{/*忘记密码*/
+	margin-left:106px;
+	color:white;
+	font-size: 12px;
+}
+#Login{/*登录良仓*/
+	width:156px;height: 40px;
+	margin-left:40px;
+	background:#25292e;
+	border: none;
+	outline:none;
+}
+/*注册良仓*/
+#registerliangcang{
+	margin-left:40px;
+	font-size: 14px;
+	color:#FFFFFF;
+	letter-spacing:1px;
+	border-bottom:1px solid #FCFCFC;
+}
+/*第三方登录盒子*/
+#ThirdLogin{
+	width:264px;
+	height:57px;
+/*	border:1px solid red;*/
+	margin:10px 0 0 30px;
+}
+/*第三方登录字*/
+#ThirdLogin-P{
+	height:36px;
+	color:#FFFFFF;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+/*更多登录方式*/
+.MoreLogin{
+	/*margin:0 8px;*/
+	margin:0px 12px 0px 0px;
+}
+.MoreLogin:hover{
+	opacity:0.8;
+}

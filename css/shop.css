@@ -131,7 +131,7 @@ header ul .last:hover a{
 	position:absolute;top:56px;right:0px;
 	background:#292f34;
 	display: none;
-	z-index: 5;
+	z-index: 1000;
 }
 .messages a{
 	width:160px;
@@ -161,7 +161,7 @@ header ul .last:hover a{
 	width:100%;
 	height:49px;
 	/*margin-bottom: 25px;*/
-	z-index: 1000;
+	z-index: 999;
 }
 .nav{
 	width:1000px;
@@ -244,6 +244,10 @@ header ul .last:hover a{
 #classify ul{
 	position:relative;
 }
+#classify ul li:first-child{
+	padding-left:40px;
+	background: url(../img/icon.png)-173px -580px no-repeat;
+}
 #classify ul li{
 	float: left;
     display: block;
@@ -277,33 +281,47 @@ header ul .last:hover a{
 	width:316px;
 	height:366px;
 	float:left;
-	margin:0px 12px 0px 4px;
+	margin:20px 12px 0px 4px;
 	position:relative;
 }
 #goods ul li>img{
 	width:316px;
 	height:316px;
 }
-#goods>ul>li>a{
+#goods>ul>li>#brand{
 	color:#878787;
 	font-size:14px;
 	line-height:40px;
 	float:left;
-	width:216px; height:40px;
-}
-#goods>ul>li>#fav{
+	padding-left:50px;
+	width:160px; height:40px;
+	background:url(../img/shoplogo.jpg)no-repeat left;
+	overflow: hidden;
+	cursor: pointer;
+}#goods>ul>li>.fav{
 	color:#878787;
 	font-size:14px;
 	float:right;
 	width:55px; height:40px;
+	line-height:40px;
+	cursor: pointer;
 }
-#goods>ul>li>#fav>img{
+#goods>ul>li>.fav>.Fav{
+	width:35px;
+	height:40px;
+	float:left;
+	display: none;
+}
+#goods>ul>li>.fav>img{
 	float:right;
 	margin-top:11px;
 }
 #goods>ul>li>input{
-	width:42px;height:30px;border-radius:5px;margin-top:5px;
-	
+	width:30px;height:30px;border-radius:5px;margin-top:5px;
+	background: url(../img/shopcarlogo.jpg)no-repeat;
+	border-style:none;
+	outline:none;
+	cursor: pointer;
 }
 #goods ul li .desc{
 	width:316px;
@@ -338,6 +356,7 @@ header ul .last:hover a{
 	width:1000px;
 	height:50px;
 	margin:0 auto;
+	overflow: hidden;
 }
 .page ul{
 	float:right;
@@ -345,4 +364,162 @@ header ul .last:hover a{
 .page ul li{
 	width:50px;
 	float:left;
+}
+
+/*底部 样式 开始拼接*/
+.our-bg{
+	width:100%;height:120px;border-top:1px solid #ededed;background:#fbfdfe;
+	padding: 51px 0 78px;
+}
+.titleour{
+	position:relative;margin: 0 auto;padding-left: 45px;width: 177px;
+    height: 16px; background:url(../img/icon.png)no-repeat;background-position: 45px -417px;
+}
+.titleour p{
+    height: 15px;width: 27px;position: absolute;left: 0; top: 1px;
+    background:url(../img/icon.png);background-position: -173px -356px;
+}
+.titleour a{
+	width:177px;
+	height:15px;
+	display:block;
+}
+.ourmany{
+	width:1000px; height:60px;padding-top:42px; margin:0 auto;background:#fbfdfe;
+}
+.ourmany ul li{
+	width:250px; height:60px; float:left;
+}
+.ourmany ul li .ourlogo{
+	background:url(../img/icon.png)no-repeat left;margin-right:16px;
+}
+.ourmany ul li.ourone .ourlogo{
+	float:left; width:56px; height:60px; background-position: 0 -355px;
+}
+.ourmany ul li.ourtwo .ourlogo{
+	float:left; width:45px; height:60px; background-position: -153px -217px;
+}
+.ourmany ul li.ourthr .ourlogo{
+	float:left; width:55px; height:60px;background-position: -57px -353px;
+}
+.ourmany ul li.ourfor .ourlogo{
+	float:left; width:57px; height:60px;background-position: -114px -353px;
+}
+.ourmany ul li .chinesetop{
+	height: 24px;line-height:24px;overflow: hidden;font-size: 14px;color: #737373;
+    text-align: left; margin-top:7px;
+}
+.ourmany ul li .english{
+	  font-size:13px;line-height: 22px; color: #ccc;
+}
+.footer-bg{
+	width:100%;height:223px;background:#25292e;border-top: #25292e 1px solid;
+}
+.footer{
+	width:1000px;height:222px;margin:0 auto;background:#25292e;
+}
+.footleft{
+	width:800px;padding-top:40px;height:182px;float:left;
+}
+.footleft>h1{
+	width:196px;height:44px;
+}
+.footleft>h1>div{
+	position:relative;padding-left:60px;font-size: 14px; font-weight:normal;
+   	width: 136px; height: 44px; color: #5c5c5c; letter-spacing: 2px;
+   	cursor: pointer;background:url(../img/icon.png)no-repeat;letter-spacing: 2px;
+ 	background-position: -175px 0;
+}
+.footleft>h1>div:hover .footcode{
+	display: block;
+}
+.footleft>h1>div>.phone{
+	line-height:18px;margin-bottom:7px;
+}
+.footleft>h1>div.footleftlogo:hover p{
+	color:#878787;
+}
+.footcode{
+	width:240px;height:186px;position: absolute;left:0px;bottom:44px;display:none;
+}
+.footcode div{
+	height:144px;width:120px;text-align:center; float:left;background:#fff;
+}
+.friend{
+	width:800px;height:108px;margin-top:29px;font-size: 12px;
+    color: #5c5c5c; letter-spacing: 3px;/*background:red;*/
+}
+.friend ul{
+	width:800px; height:14px; margin-bottom:9px;
+}
+.friend ul li{
+	float:left;
+}
+.friend ul li.have{
+	padding:0 10px;
+}
+.friend ul li.have a{
+	color: #5c5c5c;
+}
+.friend ul li.have:hover a{
+	color:#878787;
+}
+.footer-bg>.footer>.footleft>.friend>p{
+	width:100%; height:16px;
+}
+.minlogo{
+	width:200px;height:30px;float:left;
+	padding-top:45px;
+}
+.minlogo ul li{
+	float:right;height:30px;margin-left:27px;
+}
+.minlogo ul li a{
+	display:block;height:20px;background: url(../img/icon.png)no-repeat;
+	opacity:0.2;
+}
+.minlogo ul li.logoone a{
+	width:18px;background-position:-129px -25px;
+}
+.minlogo ul li.logotwo a{
+	width:23px;background-position:-150px -23px;
+}
+.minlogo ul li.logothr a{
+	width:26px;background-position:-100px -23px;position:relative;
+}
+.minlogo ul li a:hover{
+	opacity:1;
+}
+.minlogo ul li.logothr a:hover .logoonecode{
+	display:block;
+}
+.minlogo ul li.logothr a .logoonecode{
+	width:145px; height:194px;position:absolute;left:-60px;top:-193px;display:none;
+	z-index:1000;
+}
+.minlogo ul li.logothr a .logoonecode div{
+	width:145px;height:145px;background: url(../img/icon.png)no-repeat;
+	background-position:0 -148px;
+}
+.mao{
+	width:59px;height:59px;position:fixed;bottom: 44px;right: 44px;
+    
+}
+.mao a{
+	display:block;background: url(../img/icon.png);width:59px;height:59px;
+	background-position:-20px -813px;opacity:1;
+}
+.mao a:hover{
+	opacity:0.3;
+}
+.call{
+	width:90px;height:30px;position:fixed;bottom: 0px;right: 27px;
+}
+.call a{
+	display: block; width:90px;height:30px;background-color:#5b799a; color: #fff;
+   	border-radius: 4px;font-size: 13px; text-decoration: none;line-height:30px;
+    text-align:center;
+}
+.call a img{
+	margin:5px 0 0 6px;float:left;
 }

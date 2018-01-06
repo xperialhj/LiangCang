@@ -14,12 +14,12 @@ oLogin.onclick=function(){
 		if (obj.code == 0) {
 					alert("登陆成功");
 					if(oAutologin.checked==true){
-						localStorage.setItem("username",strUsername);
 						localStorage.setItem("password",strPassword);
 					}
 					console.log(obj)
+					localStorage.setItem("username",strUsername);
 					localStorage.setItem("token",obj.data.token);
-					//location.href="index.html";
+					location.href="index.html";
 				}else {
 					alert(obj.message);
 				}

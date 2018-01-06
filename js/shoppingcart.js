@@ -1,4 +1,3 @@
-var oList=document.getElementById("list");
 var oAc=document.getElementById("allchecked");
 getCart();
 oAc.onclick=function(){
@@ -20,6 +19,7 @@ function listen(){
 	  (function(j){
 	  	aReduce[j].onclick=function(){
 		 numReduce(j);
+		 getTotalPrice();
         }
 	   })(i);    
     }
@@ -28,6 +28,7 @@ function listen(){
 	  (function(j){
 	  	aPlus[j].onclick=function(){
 		 numPlus(j);
+		 getTotalPrice();
         }
 	   })(i);    
     }
@@ -36,7 +37,8 @@ function listen(){
 	  (function(j){
 	  	aDel[j].onclick=function(){
 	  	 console.log(aDel[j].name);
-		 del(aDel[j].name,j);	 
+		 del(aDel[j].name,j);
+		 getTotalPrice();
         }
 	   })(i);    
     }
@@ -55,16 +57,18 @@ function getCart(id){
 		callback:function(json){
 	        var arr=json.data;
 			var oUl=document.createElement("ul");
+			var oList=document.getElementById("list");
 			oList.innerHTML="";
 			oList.appendChild(oUl);
 				for (var i = 0; i < arr.length; i++) {
 				 var oLi=document.createElement("li");
 				 oLi.innerHTML='<div class="pic"><input class="check" type="checkbox" name="goods" onclick="getTotalPrice()"/><img src="'+ arr[i].goods_thumb +'"/></div>'+
 				  '<a>'+ arr[i].goods_name +'</a>'+
-				  '<div class="num"><input type="button" class="reduce" value="-"/><span class="goods_number">' +arr[i].goods_number +'</span><input type="button" class="plus"  value="+"/></div>'+
+				  '<div class="num"><input type="button" class="reduce" value=" - "/><span class="goods_number">' +arr[i].goods_number +'</span><input type="button" class="plus"  value=" + "/></div>'+
 				  '<span class="price">' +arr[i].goods_price +'</span>'+
 				  '<span class="subtotal">' +arr[i].goods_price*arr[i].goods_number +'</span>'+
 				  '<div class="delete"><a class="del" name="'+arr[i].goods_id+'">删除</a></div>';
+				  
 				 oUl.appendChild(oLi);
 				}
 				listen();
@@ -132,7 +136,7 @@ function getTotalPrice(){
 	for (var i = 0; i < aLi.length; i++) {
 		var oCheck=document.getElementById("list").getElementsByClassName("check")[i];
 		var oSub=document.getElementById("list").getElementsByClassName("subtotal")[i];
-		if(oCheck.checked==true){
+		if(oCheck.checked==true&&aLi[i].style.display!="none"){
 			sum+=parseFloat(oSub.innerHTML);
 		}
 	}

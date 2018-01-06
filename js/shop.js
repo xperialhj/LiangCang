@@ -25,7 +25,11 @@ window.onload=function(){
 		var oNav=document.getElementById("nav");
 		var oHeader=document.getElementById("header");
 		var top=document.body.scrollTop||document.documentElement.scrollTop;
-		
+		   if(top>150){
+				oGoback.style.display="block";
+			}else if(top<=150){
+				oGoback.style.display="none";
+			}
 		if(event.wheelDelta){ 
 			var direction = event.wheelDelta > 0 ? 1 : -1;
 		}else if(event.detail){ 
@@ -50,9 +54,52 @@ window.onload=function(){
 		}			
 	}
 }
-
+var oGoback=document.getElementById("goback");
+oGoback.onclick=function(){
+	var top=document.documentElement.scrollTop||document.body.scrollTop
+	var timer=setInterval(function(){
+		top-=50;
+		document.documentElement.scrollTop =top;
+		document.body.scrollTop =top;
+		if(top<=0){
+		  clearInterval(timer);
+		  //解决回到顶部后定位bug
+		  var oNav=document.getElementById("nav");
+		  var oHeader=document.getElementById("header");
+		  oHeader.style.position="";
+		  oNav.style.position="";
+		}
+	},10)
+}
+var oHand=document.getElementById("hand");
+oHand.onmouseover=function(){
+	if(oHand.lock){
+		return;
+		
+	}
+	oHand.lock=true;
+	var l=0;
+	var end=false;
+	var timer=setInterval(function(){
+		if(l==-25){
+			end=true;
+		}
+		if(!end){
+			l--;
+			oHand.style.left=l+"px";
+		}else{
+			l++;
+			oHand.style.left=l+"px";
+			if(l>=0){
+				clearInterval(timer);
+				oHand.lock=false;
+			}
+		}
+	},10)
+}
 
 	function skip(id,page){
+	
 		var obj={
 			method:"GET",
 			url:"http://csit.top/api_goods.php",
@@ -62,21 +109,43 @@ window.onload=function(){
 				pagesize:24
 			},
 			callback:function(json){
+			    console.log("callback");
 				var arr=json.data;
 				var oUl=document.createElement("ul");
 				oGoods.innerHTML="";
 				oGoods.appendChild(oUl);
-					for (var i = 0; i < arr.length; i++) {
-					 var oLi=document.createElement("li");
-					 oLi.innerHTML='<img src="'+ arr[i].goods_thumb +'"/>'+
-					 '<a id="brand">'+ arr[i].goods_name +'</a>'+
-					 '<input type="button" value="+" onclick="addcart('+arr[i].goods_id+')"/>'+ 
-					 '<a id="fav">'+ arr[i].star_number +'<img src="img/heart_gray.png"/></a>'+
-					 '<div class="desc"><h2>￥' +arr[i].price +'</h2><h3>' +arr[i].goods_name +'</h3><p>'+ arr[i].goods_desc +'</p></div>';
-					 
-					 oUl.appendChild(oLi);
-					}
+				var heartLog=[];
+				var fav=[];
+				for (var i = 0; i < arr.length; i++) {
+					var oLi=document.createElement("li");
+					oLi.innerHTML='<img src="'+ arr[i].goods_thumb +'"/>'+'<a id="brand">'+ arr[i].goods_name +'</a>'+'<input type="button"  onclick="addcart('+arr[i].goods_id+')"/>'+ 
+					'<a class="fav"><span class="Fav">'+ arr[i].star_number +'</span><img class="heartlogo" src="img/heart_gray.png"/></a>'+'<div class="desc"><h2>￥' +arr[i].price +'</h2><h3>' +arr[i].goods_name +'</h3><p>'+ arr[i].goods_desc +'</p></div>';
+					oUl.appendChild(oLi);				
+					heartLog[i]=document.getElementsByClassName("heartlogo")[i];
+			        fav[i]=document.getElementsByClassName("Fav")[i];
+				}
+				for (var k = 0; k < heartLog.length; k++) {
+					(function (j){
+						heartLog[j].onclick =function(){
+						fav[j].style.display="block";
+						if(!heartLog[j].red){
+							heartLog[j].src="img/heart_red.png";
+							var num=parseInt(fav[j].innerHTML);
+							num++;
+							fav[j].innerHTML=num;
+							heartLog[j].red=true;
+						}else{
+							heartLog[j].src="img/heart_gray.png";
+							var num=parseInt(fav[j].innerHTML);
+							num--;
+							fav[j].innerHTML=num;
+							heartLog[j].red=false;
+						}
+					}    
+					})(k);
+				}
 			}
+			
 	    }
 		ajax(obj);
 	}
@@ -97,20 +166,44 @@ window.onload=function(){
 				var oUl=document.createElement("ul");
 				oGoods.innerHTML="";
 				oGoods.appendChild(oUl);
-					for (var i = 0; i < arr.length; i++) {
-					 var oLi=document.createElement("li");
-					 oLi.innerHTML='<img src="'+ arr[i].goods_thumb +'"/>'+'<a>'+ arr[i].goods_name +'</a>'+'<input type="button" value="购物车" onclick="addcart('+arr[i].goods_id+')"/>'+ 
-					  '<a id="fav">'+ arr[i].star_number +'<img src="img/heart_gray.png"/></a>'+'<div class="desc"><h2>￥' +arr[i].price +'</h2><h3>' +arr[i].goods_name +'</h3><p>'+ arr[i].goods_desc +'</p></div>';
-					 oUl.appendChild(oLi);
-					}
+				var heartLog=[];
+				var fav=[];
+				for (var i = 0; i < arr.length; i++) {
+					var oLi=document.createElement("li");
+					oLi.innerHTML='<img src="'+ arr[i].goods_thumb +'"/>'+'<a id="brand">'+ arr[i].goods_name +'</a>'+'<input type="button"  onclick="addcart('+arr[i].goods_id+')"/>'+ 
+					'<a class="fav"><span class="Fav">'+ arr[i].star_number +'</span><img class="heartlogo" src="img/heart_gray.png"/></a>'+'<div class="desc"><h2>￥' +arr[i].price +'</h2><h3>' +arr[i].goods_name +'</h3><p>'+ arr[i].goods_desc +'</p></div>';
+					oUl.appendChild(oLi);				
+					heartLog[i]=document.getElementsByClassName("heartlogo")[i];
+			        fav[i]=document.getElementsByClassName("Fav")[i];
+				}
 				for (var j = 0; j < oPage.length; j++){
-		                oPage[j].goods_id=id;
-	            }
+		            oPage[j].goods_id=id; 
+	         	}
+				
+				for (var k = 0; k < heartLog.length; k++) {
+					(function (j){
+						heartLog[j].onclick =function(){
+						fav[j].style.display="block";
+						if(!heartLog[j].red){
+							heartLog[j].src="img/heart_red.png";
+							var num=parseInt(fav[j].innerHTML);
+							num++;
+							fav[j].innerHTML=num;
+							heartLog[j].red=true;
+						}else{
+							heartLog[j].src="img/heart_gray.png";
+							var num=parseInt(fav[j].innerHTML);
+							num--;
+							fav[j].innerHTML=num;
+							heartLog[j].red=false;
+						}
+					}    
+					})(k);
+				}
 			}
 	    }
 		ajax(obj);
 	}
-
 
 function addcart(id){
 	var token=localStorage.getItem("token");
@@ -129,3 +222,15 @@ function addcart(id){
 	}
 	ajax(obj);
 }
+//window.onload= function(){
+	//var aFav =document.getElementById("fav");
+	//var heartLog =document.getElementById("heartlogo");
+	//var dobconunt=0;
+	//aFav.onclick =function(){
+		//dobcount++;
+		//if(dobcount % 2 != 0){
+			//heartLog.style.src="img/heart_red.png";
+		//}
+	//}		
+//}
+				 

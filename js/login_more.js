@@ -15,9 +15,10 @@
 			if(obj.code==0){
 				alert("登录成功");
 				if(oCb.checked==true){
-					localStorage.setItem("username",strUsername)
+					
 					localStorage.setItem("password",strPassword)
 				}
+				localStorage.setItem("username",strUsername)
 				localStorage.setItem("token",obj.data.token);
 				location.href = "index.html";
 			}else{

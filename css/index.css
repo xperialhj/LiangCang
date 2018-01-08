@@ -712,6 +712,7 @@ header ul .last:hover a{
 #chat_box3{
 	width: auto;
 	height: 369px;
+	overflow: auto;
 	background: #f4f7fa;
 }
 #chat_box4{

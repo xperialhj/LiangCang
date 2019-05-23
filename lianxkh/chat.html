@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html id="chat_bo">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		*{margin:0px;
+		padding:0px;}
+			#chat_box{
+				width: 360px;
+				height: auto;
+				/*background: red;*/
+				border-radius: 5px;
+				border: 1px solid #ccc;
+				display: none;
+				position: fixed;left:75%;margin-left:0px;top: 27%;margin-top: 0px;
+			}
+			#chat_box2{
+				height: 41px;
+				background: #5b799a;
+				line-height: 41px;
+				color: white;
+				border-radius: 5px;
+			}
+			#chat_box22{
+				width: 30px;
+				height: 30px;
+				border-radius: 5px;
+				/*border: 1px solid #fff;*/
+				float: right;
+				margin-top: 4px;
+				margin-right: 10px;
+				cursor: pointer;
+			}
+			#chat_box22 img{
+				border: 1px solid #fff;
+				border-radius: 6px;
+			}
+			#chat_box2 span{
+				margin-left:10px ;
+			}
+			#chat_box2>a>img{
+				float: right;
+				margin-top: 5px;
+			}
+			#chat_box3{
+				width: auto;
+				height: 369px;
+				background: #f4f7fa;
+			}
+			#chat_box4{
+				width: auto;
+				height: 140px;
+			}
+			#chat_box4 ul li{
+				float: left;
+				list-style: none;
+				margin-left: 8px;
+			}
+			#chat_box4 textarea{
+				width: 350px;
+				height: 70px;
+				outline:none;
+				border: none;
+				resize: none;
+				padding-left: 10px;
+			}
+			#chat_but{
+				width: 100px;
+				height: 30px;
+				border-radius: 5px;
+				color: #fff;
+				outline:none;
+				border: none;
+				cursor: pointer;
+				float: right;
+				margin: -5px 5px;
+			}
+			#chat_box6{
+				width: 90px;
+				height: 30px;
+				background: #5b799a;
+				cursor: pointer;
+				color: #fff;
+				border-radius: 5px;
+				font:12px/30px "微软雅黑";
+				position: fixed;right:2%;margin-left:0px;bottom: 5%;margin-top: 0px;
+				padding-left: 3px;
+			}
+			#chat_box6 span{
+				float: right;
+				margin-right: 5px;
+			}
+			#chat_bo{
+				width: 100vh;
+				height:1000px;
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body >
+		<div id="chat_box">
+			<div id="chat_box2">
+				
+				<div id="chat_box22">
+					<img src="img/2.png"/>
+				</div>
+				<span>良仓</span>
+				<a href="#"><img src="img/1.png"/></a>
+			</div>
+			<div id="chat_box3">
+				<ul id="chat_ul">
+				</ul>
+			</div>
+			<div id="chat_box4">
+				<ul>
+					<li><a href="#"><img src="img/4.png"/></a></li>
+					<li><a href="#"><img src="img/6.png"/></a></li>
+					<li><a href="#"><img src="img/5.png"/></a></li>
+					<li><a href="#"><img src="img/3.png"/></a></li>
+				</ul>
+				<textarea placeholder="点击输入内容..." id="chat_txt" ></textarea>
+				<input type="button" id="chat_but" value="发送" />
+			</div>
+		</div>
+		<div id="chat_box6">
+			<img src="img/7.png"/>
+			<span >
+				联系客服
+			</span>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oBo=document.getElementById('chat_bo')
+	var oBox=document.getElementById('chat_box')
+	var oTxt=document.getElementById('chat_txt');
+	var oBox3=document.getElementById('chat_box3');
+	var oBut=document.getElementById('chat_but')
+	var oUi=document.getElementById('chat_ul')
+	var oBox6=document.getElementById('chat_box6')
+	var oBox22=document.getElementById('chat_box22')
+	oBut.onclick=function(){
+		var oLi=document.createElement('li')
+		var oSpan=document.createElement('span')
+		var cc=oTxt.value;
+		oTxt.value="";
+//		oLi.innerHTML=oSpan;
+		oSpan.innerHTML+=cc;
+//		oLi.style.float="right"
+		oSpan.style.wordBreak="break-word"
+		oLi.style.textAlignLast="right"
+		oLi.style.paddingTop="20px"
+		oLi.style.paddingRight="10px"
+		oSpan.style.padding="5px 10px"
+		oSpan.style.background="#999"
+		oLi.style.listStyle="none"
+		oSpan.style.borderRadius="30px"
+		oUi.appendChild(oLi)
+		oLi.appendChild(oSpan)
+		
+	}
+	oBox6.onclick=function(){
+		oBox.style.display="block"
+		oBox6.style.display="none"
+	}
+	oBox22.onclick=function(){
+		oBox6.style.display="block"
+		oBox.style.display="none"
+	}
+	oBox.onmousedown=function(event){
+		var event=event||window.event;
+		var l=event.clientX-oBox.offsetLeft;
+		var t=event.clientY-oBox.offsetTop;
+		
+		document.onmousemove=function(event){
+			var event=event||window.event;
+			var x=event.clientX-l;
+			var y=event.clientY-t;
+			if(x <= 0) x = 0;
+			if(y <= 0) y = 0;
+			if(x >= oBo.clientWidth - oBox.offsetWidth) x = oBo.clientWidth - oBox.offsetWidth;
+			if(y >= oBo.clientHeight - oBox.offsetHeight) y = oBo.clientHeight - oBox.offsetHeight;
+			oBox.style.left=x+"px"
+			oBox.style.top=y+"px"
+		}
+	}
+	oBox.onmouseup=function(){
+		document.onmousemove=null;
+	}
+</script>
